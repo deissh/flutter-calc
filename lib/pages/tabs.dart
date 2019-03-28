@@ -1,3 +1,4 @@
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -43,6 +44,14 @@ class _TabsPageState extends State<TabsPage> with SingleTickerProviderStateMixin
     return new Scaffold(
       appBar: new AppBar(
         title: new Text("Калькулятор"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.autorenew),
+            onPressed: () {
+              DynamicTheme.of(context).setBrightness(Theme.of(context).brightness == Brightness.dark? Brightness.light: Brightness.dark);
+            },
+          ),
+        ],
       ),
       body: Column(
         children: <Widget>[
