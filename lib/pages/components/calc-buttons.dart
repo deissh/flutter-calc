@@ -14,7 +14,7 @@ class CalcButtons extends StatelessWidget {
     return Column(
       children: <Widget>[
         CalcRow(
-          buttons: [Calculations.SQR, Calculations.SQRT, Calculations.MODULE, Calculations.DIVIDE],
+          buttons: [Calculations.SQR, Calculations.OPEN, Calculations.CLOSE, Calculations.DIVIDE],
           onTap: onTap,
         ),
         CalcRow(
