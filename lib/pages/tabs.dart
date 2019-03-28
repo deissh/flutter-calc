@@ -48,21 +48,12 @@ class _TabsPageState extends State<TabsPage> with SingleTickerProviderStateMixin
         children: <Widget>[
           Padding(
             padding: EdgeInsets.all(20),
-            child: Row(
-              children: <Widget>[
-                Text(
-                  calcString,
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                ),
-              ],
-              mainAxisAlignment: MainAxisAlignment.end,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Text(
-              'Синтаксическая ошибка\nДеление на ноль\nПревышение максимального числа\nSome text\Синтаксическая ошибка\nДеление на ноль\nПревышение максимального числа\nSome text\nSometext',
-              style: TextStyle(fontSize: 15),
+            child: Container(
+              alignment: Alignment.topRight,
+              child: Text(
+                calcString,
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              ),
             ),
           ),
           CalcButtons(onTap: _onPressed)          
