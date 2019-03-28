@@ -17,6 +17,8 @@ class _TabsPageState extends State<TabsPage> with SingleTickerProviderStateMixin
   AnimationController controller;
 
   String calcString = '';
+  // contains user errors
+  String errordisc = '';
   List<double> values = [];
   List<String> operations = [];
   List<String> calculations = [];
@@ -51,9 +53,16 @@ class _TabsPageState extends State<TabsPage> with SingleTickerProviderStateMixin
                 Text(
                   calcString,
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                )
+                ),
               ],
               mainAxisAlignment: MainAxisAlignment.end,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Text(
+              'Синтаксическая ошибка\nДеление на ноль\nПревышение максимального числа\nSome text\Синтаксическая ошибка\nДеление на ноль\nПревышение максимального числа\nSome text\nSometext',
+              style: TextStyle(fontSize: 15),
             ),
           ),
           CalcButtons(onTap: _onPressed)          
@@ -94,7 +103,7 @@ class _TabsPageState extends State<TabsPage> with SingleTickerProviderStateMixin
 
     if (buttonText == Calculations.PERIOD) {
       return setState(() {
-        calcString =Calculator.addPeriod(calcString);
+        calcString = Calculator.addPeriod(calcString);
       });
     }
 
